@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+<!-- title -->
+{% block title %}
+<title>Home</title>
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+
+<!-- note list -->
+{% if user.notes|length < 1 %}
+<h6 class="text-danger">You dont have any notes.</h6>
+{% else %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Note</th>
+      <th scope="col">Date</th>
+      <th scope="col">Update</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for note in user.notes %}
+    <tr>
+      <th scope="row">{{note.data}}</th>
+      <td>{{note.date}}</td>
+      <td>
+        <a href="/update/{{note.id}}">
+          Update
+        </a>
+      </td>
+      <td>
+        <a href="/delete/{{note.id}}">
+          Delete
+        </a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<!-- form to add new note -->
+<form action="" method="post">
+  <div class="mb-3">
+    <label for="myInput" class="form-label">New Task:</label>
+    <input type="text" class="form-control" id="myInput" name="data" />
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}

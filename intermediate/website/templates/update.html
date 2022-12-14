@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+<!-- title -->
+{% block title %}
+<title>Update</title>
+{% endblock %}
+
+<!-- body -->
+{% block body %}
+
+<!-- form to update note -->
+<form action="/update/{{note.id}}" method="post">
+  <div class="mb-3">
+    <label for="myInput" class="form-label">Update note:</label>
+    <input type="text" class="form-control" id="myInput" name="data" value="{{ note.data }}"/>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+{% endblock %}
