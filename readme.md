@@ -10,3 +10,6 @@
 ### Resources
 * [Flask full tutorial(basic)](https://www.youtube.com/watch?v=Z1RJmh_OqeA)
 * [Flask Tutorial - tech with tim](https://www.youtube.com/watch?v=dam0GPOAvVI)
+
+### Todo
+- [ ] Marshmellow(serializer).
